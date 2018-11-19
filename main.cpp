@@ -99,9 +99,12 @@ int main() {
     const int MAP_BOUNDARY = 1000; //1000
     const int NUMBER_OF_ELITES = 1; //1
     int distance;
+    bool isFirstRun = true;
 
 
-    double base_distance = DBL_MIN;
+    double base_fitness;
+    double best_fitness = DBL_MIN;
+    double improvement_factor = 0.5;
 
     vector<city> tour;
     multimap<double, vector<city>> population;
@@ -116,45 +119,57 @@ int main() {
     uniform_real_distribution<double> unif(lowerBound, MAP_BOUNDARY);
     default_random_engine re;
 
-    //Generate a list of cites and place in tour
-    for(int i = 0; i < CITIES_IN_TOUR; ++i) {
-        int city_id = 0;
-        double x = unif(re);
-        double y = unif(re);
-        city c{x,y, city_id};
-        ++city_id;
-        tour.push_back(c);
-    }
+    while (best_fitness / base_fitness > improvement_factor) {
+
+        //Generate a list of cites and place in tour
+        for (int i = 0; i < CITIES_IN_TOUR; ++i) {
+            int city_id = 0;
+            double x = unif(re);
+            double y = unif(re);
+            city c{x, y, city_id};
+            ++city_id;
+            tour.push_back(c);
+        }
 //
-    //Shuffle the cities in the tour so it begins at a random state
-    for(int i = 0; i < SHUFFLES; ++i) {
-        //shuffle_cities(tour, g);
-        shuffle(tour.begin(), tour.end(), g);
+        //Shuffle the cities in the tour so it begins at a random state
+        for (int i = 0; i < SHUFFLES; ++i) {
+            //shuffle_cities(tour, g);
+            shuffle(tour.begin(), tour.end(), g);
 
+        }
+
+        //Create a list of shuffle cities and put in population
+
+        for (int i = 0; i < POPULATION_SIZE; ++i) {
+            double total_distance = 0;
+            shuffle(tour.begin(), tour.end(), g);
+            //shuffle_cities(tour);
+            get_tour_distance(tour, total_distance);
+            double fitness = calculate_fitness(total_distance);
+            population.insert(pair<double, vector<city>>(fitness, tour));
+            cout << "added to population index: " << i << endl;
+        }
+        for (auto it = population.begin(); it != population.end(); ++it) {
+            cout << "fitness1: " << it->first << endl;
+        }
+
+        if (isFirstRun) {
+            base_fitness = population.rbegin()->first;
+            cout << "base_fitness" << base_fitness << endl;
+
+        }
+        // determine the lowest in population
+        double lowest_in_current_population = population.rbegin()->first;
+        if (lowest_in_current_population < best_fitness) {
+            best_fitness = lowest_in_current_population;
+            cout << "best_fitness" << best_fitness << endl;
+        }
     }
 
-    //Create a list of shuffle cities and put in population
-
-    for(int i = 0; i < POPULATION_SIZE; ++i) {
-        double total_distance = 0;
-        shuffle(tour.begin(), tour.end(), g);
-        //shuffle_cities(tour);
-        get_tour_distance(tour, total_distance);
-        double fitness = calculate_fitness(total_distance);
-        population.insert(pair<double, vector<city>>(fitness, tour));
-        cout << "added to population index: " << i << endl;
-    }
-    for (auto it = population.begin(); it != population.end(); ++it) {
-        cout << "fitness1: " << it->first << endl;
-    }
-
-    base_distance = population.rbegin()->first;
-
-    cout << "base_distance" << base_distance << endl;
 
     //if (population.end + 1)
 
-    //while best_distance / base_distance > improvement factor
+    //while best_fitness / base_fitness > improvement factor
     return 0;
 }
 
