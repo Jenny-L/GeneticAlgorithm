@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jennyly/Term3/cppassignment2/city.hpp
+
+/Users/jennyly/Term3/cppassignment2/main.cpp
+iostream
+-
+vector
+-
+map
+-
+random
+-
+cmath
+-
+cfloat
+-
+city.hpp
+/Users/jennyly/Term3/cppassignment2/city.hpp
+tour.hpp
+/Users/jennyly/Term3/cppassignment2/tour.hpp
+
+/Users/jennyly/Term3/cppassignment2/tour.hpp
+city.hpp
+/Users/jennyly/Term3/cppassignment2/city.hpp
+vector
+-
+
