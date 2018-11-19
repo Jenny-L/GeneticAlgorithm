@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jennyly/Term3/cppassignment2/city.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/city.cpp.o"
   "/Users/jennyly/Term3/cppassignment2/main.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/main.cpp.o"
+  "/Users/jennyly/Term3/cppassignment2/tour.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/tour.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

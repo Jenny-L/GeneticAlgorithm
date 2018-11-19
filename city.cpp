@@ -4,4 +4,12 @@
 
 #include "city.hpp"
 
-city::city(double x, double y, int id): x(x), y(y), id(id){};
+city::city(double x, double y, int id): x(x), y(y), id(id){}
+
+double city::getX() const {
+    return x;
+}
+
+double city::getY() const {
+    return y;
+};

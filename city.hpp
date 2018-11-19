@@ -13,6 +13,9 @@ private:
     int id;
 public:
     city(double x, double y, int id);
+    double getX() const;
+    double getY() const;
+
 };
 
 

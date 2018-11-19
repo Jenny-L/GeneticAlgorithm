@@ -91,6 +91,12 @@
 		<Unit filename="/Users/jennyly/Term3/cppassignment2/main.cpp">
 			<Option target="cppassignment2"/>
 		</Unit>
+		<Unit filename="/Users/jennyly/Term3/cppassignment2/tour.cpp">
+			<Option target="cppassignment2"/>
+		</Unit>
+		<Unit filename="/Users/jennyly/Term3/cppassignment2/tour.hpp">
+			<Option target="cppassignment2"/>
+		</Unit>
 		<Unit filename="/Users/jennyly/Term3/cppassignment2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
