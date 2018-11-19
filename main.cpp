@@ -104,7 +104,7 @@ int main() {
     double base_distance = DBL_MIN;
 
     vector<city> tour;
-    map<double, vector<city>> population;
+    multimap<double, vector<city>> population;
 
     //Shuffling tours device
     random_device rd;
@@ -142,9 +142,10 @@ int main() {
         get_tour_distance(tour, total_distance);
         double fitness = calculate_fitness(total_distance);
         population.insert(pair<double, vector<city>>(fitness, tour));
-        for (auto it = population.begin(); it != population.end(); ++it) {
-            cout << "fitness1: " << it->first << endl;
-        }
+        cout << "added to population index: " << i << endl;
+    }
+    for (auto it = population.begin(); it != population.end(); ++it) {
+        cout << "fitness1: " << it->first << endl;
     }
 
     //while best_distance / base_distance > improvement factor
