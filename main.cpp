@@ -148,6 +148,12 @@ int main() {
         cout << "fitness1: " << it->first << endl;
     }
 
+    base_distance = population.rbegin()->first;
+
+    cout << "base_distance" << base_distance << endl;
+
+    //if (population.end + 1)
+
     //while best_distance / base_distance > improvement factor
     return 0;
 }
