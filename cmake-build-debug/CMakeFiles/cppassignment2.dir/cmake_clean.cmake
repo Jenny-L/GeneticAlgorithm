@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cppassignment2.dir/main.cpp.o"
-  "CMakeFiles/cppassignment2.dir/city.cpp.o"
-  "CMakeFiles/cppassignment2.dir/tour.cpp.o"
+  "CMakeFiles/cppassignment2.dir/City.cpp.o"
+  "CMakeFiles/cppassignment2.dir/Tour.cpp.o"
   "cppassignment2.pdb"
   "cppassignment2"
 )

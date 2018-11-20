@@ -6,21 +6,24 @@
 #define CPPASSIGNMENT2_TOUR_HPP
 
 
-#include "city.hpp"
+#include "City.hpp"
 #include <vector>
 
 using namespace std;
 
-class tour {
+class Tour {
 private:
-    vector<city> container;
+    vector<City> container;
     double fitness_rating;
 public:
-    tour(vector<city> tour, double fitness = 0);
+    Tour();
+    Tour(City c, double fitness = 0);
+    Tour(vector<City> tour, double fitness);
     void set_fitness_rating(double fitness);
     double get_fitness_rating() const;
-    const vector<city> &getContainer() const;
-
+    vector<City> &getContainer();
+    void setContainer(const vector<City> &container);
+    bool operator <(const Tour& t) const;
 
 };
 

@@ -82,19 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/jennyly/Term3/cppassignment2/city.cpp">
+		<Unit filename="/Users/jennyly/Term3/cppassignment2/City.cpp">
 			<Option target="cppassignment2"/>
 		</Unit>
-		<Unit filename="/Users/jennyly/Term3/cppassignment2/city.hpp">
+		<Unit filename="/Users/jennyly/Term3/cppassignment2/City.hpp">
+			<Option target="cppassignment2"/>
+		</Unit>
+		<Unit filename="/Users/jennyly/Term3/cppassignment2/Tour.cpp">
+			<Option target="cppassignment2"/>
+		</Unit>
+		<Unit filename="/Users/jennyly/Term3/cppassignment2/Tour.hpp">
 			<Option target="cppassignment2"/>
 		</Unit>
 		<Unit filename="/Users/jennyly/Term3/cppassignment2/main.cpp">
-			<Option target="cppassignment2"/>
-		</Unit>
-		<Unit filename="/Users/jennyly/Term3/cppassignment2/tour.cpp">
-			<Option target="cppassignment2"/>
-		</Unit>
-		<Unit filename="/Users/jennyly/Term3/cppassignment2/tour.hpp">
 			<Option target="cppassignment2"/>
 		</Unit>
 		<Unit filename="/Users/jennyly/Term3/cppassignment2/CMakeLists.txt">

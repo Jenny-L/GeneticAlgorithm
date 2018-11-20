@@ -123,32 +123,59 @@ cppassignment2/fast:
 	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/build
 .PHONY : cppassignment2/fast
 
-city.o: city.cpp.o
+City.o: City.cpp.o
 
-.PHONY : city.o
+.PHONY : City.o
 
 # target to build an object file
-city.cpp.o:
-	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/city.cpp.o
-.PHONY : city.cpp.o
+City.cpp.o:
+	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/City.cpp.o
+.PHONY : City.cpp.o
 
-city.i: city.cpp.i
+City.i: City.cpp.i
 
-.PHONY : city.i
+.PHONY : City.i
 
 # target to preprocess a source file
-city.cpp.i:
-	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/city.cpp.i
-.PHONY : city.cpp.i
+City.cpp.i:
+	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/City.cpp.i
+.PHONY : City.cpp.i
 
-city.s: city.cpp.s
+City.s: City.cpp.s
 
-.PHONY : city.s
+.PHONY : City.s
 
 # target to generate assembly for a file
-city.cpp.s:
-	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/city.cpp.s
-.PHONY : city.cpp.s
+City.cpp.s:
+	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/City.cpp.s
+.PHONY : City.cpp.s
+
+Tour.o: Tour.cpp.o
+
+.PHONY : Tour.o
+
+# target to build an object file
+Tour.cpp.o:
+	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/Tour.cpp.o
+.PHONY : Tour.cpp.o
+
+Tour.i: Tour.cpp.i
+
+.PHONY : Tour.i
+
+# target to preprocess a source file
+Tour.cpp.i:
+	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/Tour.cpp.i
+.PHONY : Tour.cpp.i
+
+Tour.s: Tour.cpp.s
+
+.PHONY : Tour.s
+
+# target to generate assembly for a file
+Tour.cpp.s:
+	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/Tour.cpp.s
+.PHONY : Tour.cpp.s
 
 main.o: main.cpp.o
 
@@ -177,33 +204,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-tour.o: tour.cpp.o
-
-.PHONY : tour.o
-
-# target to build an object file
-tour.cpp.o:
-	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/tour.cpp.o
-.PHONY : tour.cpp.o
-
-tour.i: tour.cpp.i
-
-.PHONY : tour.i
-
-# target to preprocess a source file
-tour.cpp.i:
-	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/tour.cpp.i
-.PHONY : tour.cpp.i
-
-tour.s: tour.cpp.s
-
-.PHONY : tour.s
-
-# target to generate assembly for a file
-tour.cpp.s:
-	$(MAKE) -f CMakeFiles/cppassignment2.dir/build.make CMakeFiles/cppassignment2.dir/tour.cpp.s
-.PHONY : tour.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,15 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cppassignment2"
-	@echo "... city.o"
-	@echo "... city.i"
-	@echo "... city.s"
+	@echo "... City.o"
+	@echo "... City.i"
+	@echo "... City.s"
+	@echo "... Tour.o"
+	@echo "... Tour.i"
+	@echo "... Tour.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tour.o"
-	@echo "... tour.i"
-	@echo "... tour.s"
 .PHONY : help
 
 

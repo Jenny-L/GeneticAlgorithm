@@ -70,44 +70,44 @@ CMakeFiles/cppassignment2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/main.cpp -o CMakeFiles/cppassignment2.dir/main.cpp.s
 
-CMakeFiles/cppassignment2.dir/city.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
-CMakeFiles/cppassignment2.dir/city.cpp.o: ../city.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cppassignment2.dir/city.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/city.cpp.o -c /Users/jennyly/Term3/cppassignment2/city.cpp
+CMakeFiles/cppassignment2.dir/City.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
+CMakeFiles/cppassignment2.dir/City.cpp.o: ../City.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cppassignment2.dir/City.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/City.cpp.o -c /Users/jennyly/Term3/cppassignment2/City.cpp
 
-CMakeFiles/cppassignment2.dir/city.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/city.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/city.cpp > CMakeFiles/cppassignment2.dir/city.cpp.i
+CMakeFiles/cppassignment2.dir/City.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/City.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/City.cpp > CMakeFiles/cppassignment2.dir/City.cpp.i
 
-CMakeFiles/cppassignment2.dir/city.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/city.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/city.cpp -o CMakeFiles/cppassignment2.dir/city.cpp.s
+CMakeFiles/cppassignment2.dir/City.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/City.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/City.cpp -o CMakeFiles/cppassignment2.dir/City.cpp.s
 
-CMakeFiles/cppassignment2.dir/tour.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
-CMakeFiles/cppassignment2.dir/tour.cpp.o: ../tour.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cppassignment2.dir/tour.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/tour.cpp.o -c /Users/jennyly/Term3/cppassignment2/tour.cpp
+CMakeFiles/cppassignment2.dir/Tour.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
+CMakeFiles/cppassignment2.dir/Tour.cpp.o: ../Tour.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cppassignment2.dir/Tour.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/Tour.cpp.o -c /Users/jennyly/Term3/cppassignment2/Tour.cpp
 
-CMakeFiles/cppassignment2.dir/tour.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/tour.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/tour.cpp > CMakeFiles/cppassignment2.dir/tour.cpp.i
+CMakeFiles/cppassignment2.dir/Tour.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/Tour.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/Tour.cpp > CMakeFiles/cppassignment2.dir/Tour.cpp.i
 
-CMakeFiles/cppassignment2.dir/tour.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/tour.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/tour.cpp -o CMakeFiles/cppassignment2.dir/tour.cpp.s
+CMakeFiles/cppassignment2.dir/Tour.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/Tour.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/Tour.cpp -o CMakeFiles/cppassignment2.dir/Tour.cpp.s
 
 # Object files for target cppassignment2
 cppassignment2_OBJECTS = \
 "CMakeFiles/cppassignment2.dir/main.cpp.o" \
-"CMakeFiles/cppassignment2.dir/city.cpp.o" \
-"CMakeFiles/cppassignment2.dir/tour.cpp.o"
+"CMakeFiles/cppassignment2.dir/City.cpp.o" \
+"CMakeFiles/cppassignment2.dir/Tour.cpp.o"
 
 # External object files for target cppassignment2
 cppassignment2_EXTERNAL_OBJECTS =
 
 cppassignment2: CMakeFiles/cppassignment2.dir/main.cpp.o
-cppassignment2: CMakeFiles/cppassignment2.dir/city.cpp.o
-cppassignment2: CMakeFiles/cppassignment2.dir/tour.cpp.o
+cppassignment2: CMakeFiles/cppassignment2.dir/City.cpp.o
+cppassignment2: CMakeFiles/cppassignment2.dir/Tour.cpp.o
 cppassignment2: CMakeFiles/cppassignment2.dir/build.make
 cppassignment2: CMakeFiles/cppassignment2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cppassignment2"

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/jennyly/Term3/cppassignment2/city.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/city.cpp.o"
+  "/Users/jennyly/Term3/cppassignment2/City.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/City.cpp.o"
+  "/Users/jennyly/Term3/cppassignment2/Tour.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/Tour.cpp.o"
   "/Users/jennyly/Term3/cppassignment2/main.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/main.cpp.o"
-  "/Users/jennyly/Term3/cppassignment2/tour.cpp" "/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles/cppassignment2.dir/tour.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
