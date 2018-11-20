@@ -97,6 +97,10 @@ Tour get_fittest_parent(vector<Tour> parent_population) {
     return *parent_population.begin();
 }
 
+vector<City> parent_one_section(int index) {
+
+}
+
 int main() {
     const int CITIES_IN_TOUR = 5; //orginally 32
     const int POPULATION_SIZE = 5; //number or tours in  a population 32
@@ -106,7 +110,7 @@ int main() {
     const int NUMBER_OF_ELITES = 1; //1
     const int PARENT_POOL_SIZE = 5;
     const double MUTATION_RATE = 0.15;
-    const int NUMBER_OF_PARENTS = 1;
+    const int NUMBER_OF_PARENTS = 2;
     int distance;
     bool isFirstRun = true;
 
@@ -189,29 +193,44 @@ int main() {
     //while (best_fitness / base_fitness > improvement_factor) {
     size_t population_index = 0;
 
-    //SWAPPING: every other tour with a parent
+    //CROSSOVER: swapping every other tour with a parent
     for(auto it = population.begin(); it != population.end(); ++it) {
-        int index_to_swap = rand() % CITIES_IN_TOUR;
+
         Tour fittest_parent;
-        vector<int> parents_random_indices;
-        vector<Tour> parent_population;
-        //Get random index of tours to become parents
-        for (size_t i = 0; i < PARENT_POOL_SIZE; ++i) {
-            parents_random_indices.push_back(rand() % POPULATION_SIZE);
+        vector<Tour> fit_parent_population;
+
+        //Get the parents to swap to produce a child
+        for(size_t j = 0; j < NUMBER_OF_PARENTS; ++j) {
+
+
+            vector<int> parents_random_indices;
+            vector<Tour> parent_population;
+            //Get index of 5 tours to choose fittest parent from
+            for (size_t i = 0; i < PARENT_POOL_SIZE; ++i) {
+                parents_random_indices.push_back(rand() % POPULATION_SIZE);
+            }
+            parent_population = select_parent(parents_random_indices, population);
+
+            fittest_parent = get_fittest_parent(parent_population);
+
+            fit_parent_population.push_back(fittest_parent);
+            //Tour current_tour = *it;
+
+            //swapping parent and current tour
+            //swap_ranges(current_tour.getContainer().begin() + index_to_swap, current_tour.getContainer().end(), fittest_parent.getContainer().begin() + index_to_swap);
+
+            //cout << "length of current_tour" << current_tour.getContainer().size();
+            //population.at(population_index) = current_tour;
+            //++population_index;
         }
+        for(size_t k = 0; k < fit_parent_population.size() - 1; ++k) {
+            int index_to_swap = rand() % CITIES_IN_TOUR;
+            Tour first = fit_parent_population.at(k);
+            Tour second = fit_parent_population.at(k+1);
+            //Tour child
 
-        parent_population = select_parent(parents_random_indices, population);
-        fittest_parent = get_fittest_parent(parent_population);
 
-        Tour current_tour = *it;
-
-        //swapping parent and current tour
-        swap_ranges(current_tour.getContainer().begin() + index_to_swap, current_tour.getContainer().end(), fittest_parent.getContainer().begin() + index_to_swap);
-
-        //cout << "length of current_tour" << current_tour.getContainer().size();
-        population.at(population_index) = current_tour;
-        ++population_index;
-
+        }
         if (it != population.end() - 1) {
             ++it;
         }
