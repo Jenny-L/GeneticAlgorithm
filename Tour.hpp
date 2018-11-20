@@ -24,6 +24,7 @@ public:
     vector<City> &getContainer();
     void setContainer(const vector<City> &container);
     bool operator <(const Tour& t) const;
+    Tour& operator =(Tour t);
 
 };
 

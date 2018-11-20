@@ -36,3 +36,12 @@ bool Tour::operator <(const Tour& t) const{
     }
     return false;
 }
+
+Tour& Tour::operator=(Tour t) {
+    using std::swap;
+
+    this->container.swap(t.container);
+    this->fitness_rating = t.fitness_rating;
+
+    return *this;
+}

@@ -60,10 +60,15 @@ double get_tour_distance(vector<City> t, double &total_distance) {
 }
 
 /**
- * Select the parents for a new tour
+ * Select the parent tours
  */
-void select_parent(multimap<double, vector<City>> population) {
-
+vector<Tour> select_parent(vector<int> parents_random_indices, vector<Tour> population) {
+    vector<Tour> parents;
+    for(size_t i = 0; i < parents_random_indices.size(); i++) {
+        size_t index = parents_random_indices.at(i);
+        parents.push_back(population.at(index));
+    }
+    return parents;
 }
 
 /**
@@ -87,6 +92,11 @@ void mutate() {
 //
 //}
 
+Tour get_fittest_parent(vector<Tour> parent_population) {
+    sort(parent_population.begin(), parent_population.end());
+    return *parent_population.begin();
+}
+
 int main() {
     const int CITIES_IN_TOUR = 5; //orginally 32
     const int POPULATION_SIZE = 5; //number or tours in  a population 32
@@ -96,7 +106,7 @@ int main() {
     const int NUMBER_OF_ELITES = 1; //1
     const int PARENT_POOL_SIZE = 5;
     const double MUTATION_RATE = 0.15;
-    const int NUMBER_OF_PARENTS = 2;
+    const int NUMBER_OF_PARENTS = 1;
     int distance;
     bool isFirstRun = true;
 
@@ -154,12 +164,18 @@ int main() {
         //shuffle_cities(Tour);
         get_tour_distance(tour_container, total_distance);
         double fitness = determine_fitness(total_distance);
+
+        //determine base_fitness
+        if (fitness > base_fitness) {
+            base_fitness = fitness;
+        }
+
+        //add shuffled tour to population
         Tour shuffled_tour{tour_container, fitness};
         population.push_back(shuffled_tour);
         cout << "added to population index: " << i << endl;
     }
 
-    sort(population.begin(), population.end());
     for (auto it = population.begin(); it != population.end(); ++it) {
         cout << "fitness1: " << it->get_fitness_rating() << endl;
     }
@@ -170,23 +186,48 @@ int main() {
 
     base_fitness = best_fitness;
 
-//    while (best_fitness / base_fitness > improvement_factor) {
+    //while (best_fitness / base_fitness > improvement_factor) {
+    size_t population_index = 0;
+
+    //SWAPPING: every other tour with a parent
+    for(auto it = population.begin(); it != population.end(); ++it) {
+        int index_to_swap = rand() % CITIES_IN_TOUR;
+        Tour fittest_parent;
+        vector<int> parents_random_indices;
+        vector<Tour> parent_population;
+        //Get random index of tours to become parents
+        for (size_t i = 0; i < PARENT_POOL_SIZE; ++i) {
+            parents_random_indices.push_back(rand() % POPULATION_SIZE);
+        }
+
+        parent_population = select_parent(parents_random_indices, population);
+        fittest_parent = get_fittest_parent(parent_population);
+
+        Tour current_tour = *it;
+
+        //swapping parent and current tour
+        swap_ranges(current_tour.getContainer().begin() + index_to_swap, current_tour.getContainer().end(), fittest_parent.getContainer().begin() + index_to_swap);
+
+        //cout << "length of current_tour" << current_tour.getContainer().size();
+        population.at(population_index) = current_tour;
+        ++population_index;
+
+        if (it != population.end() - 1) {
+            ++it;
+        }
+    }
+
+    for (auto it = population.begin(); it != population.end(); ++it) {
+        cout << "fitness2: " << it->get_fitness_rating() << endl;
+    }
 //
-//        vector<City> parents;
-//        vector<City> best_tour = population.rbegin()->second;
-//
-//        for(size_t i= 0; i < NUMBER_OF_PARENTS; ++i) {
-//            int random_index = rand() % POPULATION_SIZE;
-//
-//        }
-//
-//
-//        double lowest_in_current_population = population.rbegin()->first;
+//        sort(population.begin(), population.end());
+//        double lowest_in_current_population = population.begin()->get_fitness_rating();
 //        if (lowest_in_current_population < best_fitness) {
 //            best_fitness = lowest_in_current_population;
 //            cout << "best_fitness" << best_fitness << endl;
 //        }
-//    }
+    //}
 
 
     //if (population.end + 1)
