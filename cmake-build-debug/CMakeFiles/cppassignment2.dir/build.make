@@ -60,41 +60,41 @@ include CMakeFiles/cppassignment2.dir/flags.make
 CMakeFiles/cppassignment2.dir/main.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
 CMakeFiles/cppassignment2.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cppassignment2.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/main.cpp.o -c /Users/jennyly/Term3/cppassignment2/main.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/main.cpp.o -c /Users/jennyly/Term3/cppassignment2/main.cpp
 
 CMakeFiles/cppassignment2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/main.cpp > CMakeFiles/cppassignment2.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/main.cpp > CMakeFiles/cppassignment2.dir/main.cpp.i
 
 CMakeFiles/cppassignment2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/main.cpp -o CMakeFiles/cppassignment2.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/main.cpp -o CMakeFiles/cppassignment2.dir/main.cpp.s
 
 CMakeFiles/cppassignment2.dir/City.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
 CMakeFiles/cppassignment2.dir/City.cpp.o: ../City.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cppassignment2.dir/City.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/City.cpp.o -c /Users/jennyly/Term3/cppassignment2/City.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/City.cpp.o -c /Users/jennyly/Term3/cppassignment2/City.cpp
 
 CMakeFiles/cppassignment2.dir/City.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/City.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/City.cpp > CMakeFiles/cppassignment2.dir/City.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/City.cpp > CMakeFiles/cppassignment2.dir/City.cpp.i
 
 CMakeFiles/cppassignment2.dir/City.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/City.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/City.cpp -o CMakeFiles/cppassignment2.dir/City.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/City.cpp -o CMakeFiles/cppassignment2.dir/City.cpp.s
 
 CMakeFiles/cppassignment2.dir/Tour.cpp.o: CMakeFiles/cppassignment2.dir/flags.make
 CMakeFiles/cppassignment2.dir/Tour.cpp.o: ../Tour.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jennyly/Term3/cppassignment2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cppassignment2.dir/Tour.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/Tour.cpp.o -c /Users/jennyly/Term3/cppassignment2/Tour.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cppassignment2.dir/Tour.cpp.o -c /Users/jennyly/Term3/cppassignment2/Tour.cpp
 
 CMakeFiles/cppassignment2.dir/Tour.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppassignment2.dir/Tour.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/Tour.cpp > CMakeFiles/cppassignment2.dir/Tour.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jennyly/Term3/cppassignment2/Tour.cpp > CMakeFiles/cppassignment2.dir/Tour.cpp.i
 
 CMakeFiles/cppassignment2.dir/Tour.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppassignment2.dir/Tour.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/Tour.cpp -o CMakeFiles/cppassignment2.dir/Tour.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jennyly/Term3/cppassignment2/Tour.cpp -o CMakeFiles/cppassignment2.dir/Tour.cpp.s
 
 # Object files for target cppassignment2
 cppassignment2_OBJECTS = \

@@ -97,8 +97,48 @@ Tour get_fittest_parent(vector<Tour> parent_population) {
     return *parent_population.begin();
 }
 
-vector<City> parent_one_section(int index) {
+/**
+ *
+ * @param parent
+ * @param index
+ * @return
+ */
+void add_offspring_tour(Tour parent, Tour &child, vector<int> &used_place_id) {
+    map<int, City> m;
+    auto parent_container = parent.getContainer();
 
+
+
+    //put parent tour in a map of cities
+    for(size_t i = 0; i < parent_container.size(); ++i) {
+        m.insert(pair<int, City>(parent_container.at(i).getId(), parent_container.at(i)));
+    }
+
+    //delete cities in map where id matches that of used_place_id
+    for(size_t i = 0; i < used_place_id.size(); ++i) {
+        m.erase(used_place_id.at(i));
+        cout << "city Id erased from used_place_id " << used_place_id.at(i) << endl;
+    }
+
+    //find size of modified map
+    size_t size = m.size();
+    cout << "size of modified map " << size << endl;
+    size_t random_index = (rand() % size);
+    cout << "random index " << random_index << endl;
+    cout << endl;
+
+    //copy map to child container up to a random index
+    for(size_t i = 0; i < random_index; ++i) {
+        City c = next(m.begin(), i)->second;
+        used_place_id.push_back(c.getId());
+        cout << "city Id added to used_place_id " << c.getId() << endl;
+        child.getContainer().push_back(c);
+    }
+
+    //printing new child container for testing
+    for(size_t i = 0; i < child.getContainer().size(); ++i) {
+        cout << "child container id: " << child.getContainer().at(i).getId() << endl;
+    }
 }
 
 int main() {
@@ -110,7 +150,7 @@ int main() {
     const int NUMBER_OF_ELITES = 1; //1
     const int PARENT_POOL_SIZE = 5;
     const double MUTATION_RATE = 0.15;
-    const int NUMBER_OF_PARENTS = 2;
+    const int NUMBER_OF_PARENTS = 3;
     int distance;
     bool isFirstRun = true;
 
@@ -139,11 +179,9 @@ int main() {
 
     //Generate a list of cites and place in one Tour
     for (int i = 0; i < CITIES_IN_TOUR; ++i) {
-        int city_id = 0;
         double x = unif(re);
         double y = unif(re);
-        City c{x, y, city_id};
-        ++city_id;
+        City c{x, y, i};
         tour.getContainer().push_back(c);
     }
     vector<City> tour_container = tour.getContainer();
@@ -162,7 +200,7 @@ int main() {
 
         shuffle(tour_container.begin(), tour_container.end(), g);
         for (City c: tour_container) {
-            cout << "x: " << c.getX() << " c.getY() " << c.getY() << endl;
+            cout << "x: " << c.getX() << " c.getY() " << c.getY() << "c.id" << c.getId() << endl;
         }
         cout << endl;
         //shuffle_cities(Tour);
@@ -206,14 +244,19 @@ int main() {
             vector<int> parents_random_indices;
             vector<Tour> parent_population;
             //Get index of 5 tours to choose fittest parent from
+            cout << endl;
+            cout << "5 random index choosen: " << endl;
             for (size_t i = 0; i < PARENT_POOL_SIZE; ++i) {
                 parents_random_indices.push_back(rand() % POPULATION_SIZE);
+                cout << "index " << i << rand() % POPULATION_SIZE << endl;
             }
             parent_population = select_parent(parents_random_indices, population);
 
             fittest_parent = get_fittest_parent(parent_population);
 
             fit_parent_population.push_back(fittest_parent);
+            cout << endl;
+            cout << "fit_parent_population's size" << fit_parent_population.size() << endl;
             //Tour current_tour = *it;
 
             //swapping parent and current tour
@@ -223,12 +266,18 @@ int main() {
             //population.at(population_index) = current_tour;
             //++population_index;
         }
-        for(size_t k = 0; k < fit_parent_population.size() - 1; ++k) {
+
+        //crossing the parents
+        Tour child_tour;
+        vector<int> used_place_id;
+        for(size_t k = 0; k < NUMBER_OF_PARENTS; ++k) {
+            cout << endl;
+            cout << "NUMBER OF PARENTS" << k << endl;
             int index_to_swap = rand() % CITIES_IN_TOUR;
             Tour first = fit_parent_population.at(k);
-            Tour second = fit_parent_population.at(k+1);
-            //Tour child
 
+            //Tour child
+            add_offspring_tour(first, child_tour, used_place_id);
 
         }
         if (it != population.end() - 1) {
@@ -239,6 +288,9 @@ int main() {
     for (auto it = population.begin(); it != population.end(); ++it) {
         cout << "fitness2: " << it->get_fitness_rating() << endl;
     }
+
+
+
 //
 //        sort(population.begin(), population.end());
 //        double lowest_in_current_population = population.begin()->get_fitness_rating();

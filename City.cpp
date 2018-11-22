@@ -13,3 +13,7 @@ double City::getX() const {
 double City::getY() const {
     return y;
 };
+
+double City::getId() const {
+    return id;
+}
