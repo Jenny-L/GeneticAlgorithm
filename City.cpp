@@ -14,7 +14,7 @@ double City::getY() const {
     return y;
 };
 
-double City::getId() const {
+int City::getId() const {
     return id;
 }
 

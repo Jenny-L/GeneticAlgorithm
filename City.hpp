@@ -15,7 +15,7 @@ public:
     City(double x, double y, int id);
     double getX() const;
     double getY() const;
-    double getId() const;
+    int getId() const;
     City& operator=(const City &c);
 
 };
