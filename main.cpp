@@ -360,32 +360,23 @@ int main() {
             //Get the parents to swap to produce a child
             for (size_t j = 0; j < NUMBER_OF_PARENTS; ++j) {
 
-
                 vector<int> parents_random_indices;
                 vector<Tour> parent_population;
                 //Get index of 5 tours to choose fittest parent from
-                cout << endl;
-                cout << "5 random index choosen: " << endl;
-                for (size_t i = 0; i < PARENT_POOL_SIZE; i++) {
-                    int random_number = rand() % POPULATION_SIZE;
-                    parents_random_indices.push_back(random_number);
-                    cout << "index " << i << " " << random_number << endl;
-                }
+//                cout << endl;
+//                cout << "5 random index choosen: " << endl;
+//                for (size_t i = 0; i < PARENT_POOL_SIZE; i++) {
+//                    int random_number = rand() % POPULATION_SIZE;
+//                    parents_random_indices.push_back(random_number);
+//                    cout << "index " << i << " " << random_number << endl;
+//                }
                 parent_population = select_parent(parents_random_indices, population);
 
                 fittest_parent = get_fittest_parent(parent_population);
 
                 fit_parent_population.push_back(fittest_parent);
-                cout << endl;
-                cout << "fit_parent_population's size" << fit_parent_population.size() << endl;
-                //Tour current_tour = *it;
-
-                //swapping parent and current tour
-                //swap_ranges(current_tour.getContainer().begin() + index_to_swap, current_tour.getContainer().end(), fittest_parent.getContainer().begin() + index_to_swap);
-
-                //cout << "length of current_tour" << current_tour.getContainer().size();
-                //population.at(population_index) = current_tour;
-                //++population_index;
+//                cout << endl;
+//                cout << "fit_parent_population's size" << fit_parent_population.size() << endl;
             }
 
             for (size_t k = 0; k < NUMBER_OF_PARENTS; ++k) {
@@ -393,14 +384,8 @@ int main() {
                 cout << "number parent " << k << endl;
                 int index_to_swap = rand() % CITIES_IN_TOUR;
                 Tour first = fit_parent_population.at(k);
-                //Tour second = fit_parent_population.at(k + 1);
 
-                cout << first.get_fitness_rating() << endl;
-
-//            auto container = first.getContainer();
-//            for (size_t h = 0; h < container.size(); ++h) {
-//                cout << container.at(h).getId() << endl;
-//            }
+                //cout << first.get_fitness_rating() << endl;
 
             }
             //crossing the parents
@@ -459,21 +444,7 @@ int main() {
         }
 
 
-        // determine the best_fitness in first population
-        for (auto it = population.begin(); it != population.end(); ++it) {
-            if (it->get_fitness_rating() > currentMax) {
-                currentMax = it->get_fitness_rating();
-            }
-        }
-
-        best_fitness = currentMax;
-
-        counter++;
-
         //Mutation
-
-
-
         vector<int> random_indices;
         cout << "5 random index choosen: " << endl;
         for (size_t i = 0; i < PARENT_POOL_SIZE; i++) {
@@ -493,37 +464,26 @@ int main() {
                         t.getContainer().at(0) = temp;
                     }
                 }
+                double mutated_tour_distance = 0;
+                get_tour_distance(t.getContainer(), mutated_tour_distance);
+                double fitness = determine_fitness(mutated_tour_distance);
+                t.set_fitness_rating(fitness);
             }
             cout << "index " << i << " " << random_number << endl;
         }
 
+        // determine the best_fitness in first population
+        for (auto it = population.begin(); it != population.end(); ++it) {
+            if (it->get_fitness_rating() > currentMax) {
+                currentMax = it->get_fitness_rating();
+            }
+        }
+
+        best_fitness = currentMax;
+
+        counter++;
+
     }
 
-
-
-//
-//    for (auto it = child_population.begin(); it != child_population.end(); ++it) {
-//        cout << "fitness_child: " << it->get_fitness_rating() << endl;
-//    }
-//
-//    for (auto it = population.begin(); it != population.end(); ++it) {
-//        cout << "fitness2: " << it->get_fitness_rating() << endl;
-//    }
-
-
-
-//
-//        sort(population.begin(), population.end());
-//        double lowest_in_current_population = population.begin()->get_fitness_rating();
-//        if (lowest_in_current_population < best_fitness) {
-//            best_fitness = lowest_in_current_population;
-//            cout << "best_fitness" << best_fitness << endl;
-//        }
-    //}
-
-
-    //if (population.end + 1)
-
-    //while best_fitness / base_fitness > improvement factor
     return 0;
 }
