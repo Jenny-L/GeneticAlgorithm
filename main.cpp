@@ -12,18 +12,6 @@ const double SCALAR = 10000;
 using namespace std;
 const int NUMBER_OF_PARENTS = 3;
 
-///**
-// * Shuffles a cities in a Tour
-// */
-//vector<City> shuffle_cities(vector<City>Tour, mt19937 &g) {
-//    shuffle(Tour.begin(), Tour.end(), g);
-//    for (City c: Tour) {
-//        cout << "x: " << c.getX() << " c.getY() " << c.getY() << endl;
-//    }
-//    cout << endl;
-//    return Tour;
-//}
-
 /**
  * Calculate the air distance of two places by
  * First calculating the change in x and change in y
@@ -43,8 +31,6 @@ double get_distance_between_cites(City a, City b) {
 
 double determine_fitness(double distance) {
     double fitness = (1 / distance) * SCALAR;
-    //cout << "fitness " << fitness << endl;
-    //cout << endl;
     return fitness;
 }
 
@@ -104,6 +90,7 @@ Tour get_fittest_parent(vector<Tour> parent_population) {
             highest_fitness = parent_population[i].get_fitness_rating();
         }
     }
+    cout << "get_fittest_partent " << highest_fitness << endl;
     //sort(parent_population.begin(), parent_population.end());
     return fittest_parent;
 }
@@ -363,20 +350,20 @@ int main() {
                 vector<int> parents_random_indices;
                 vector<Tour> parent_population;
                 //Get index of 5 tours to choose fittest parent from
-//                cout << endl;
-//                cout << "5 random index choosen: " << endl;
-//                for (size_t i = 0; i < PARENT_POOL_SIZE; i++) {
-//                    int random_number = rand() % POPULATION_SIZE;
-//                    parents_random_indices.push_back(random_number);
-//                    cout << "index " << i << " " << random_number << endl;
-//                }
+                cout << endl;
+                cout << "5 random index choosen: " << endl;
+                for (size_t i = 0; i < PARENT_POOL_SIZE; i++) {
+                    int random_number = rand() % POPULATION_SIZE;
+                    parents_random_indices.push_back(random_number);
+                    cout << "index " << i << " " << random_number << endl;
+                }
                 parent_population = select_parent(parents_random_indices, population);
 
                 fittest_parent = get_fittest_parent(parent_population);
 
                 fit_parent_population.push_back(fittest_parent);
-//                cout << endl;
-//                cout << "fit_parent_population's size" << fit_parent_population.size() << endl;
+                cout << endl;
+                cout << "fit_parent_population's size" << fit_parent_population.size() << endl;
             }
 
             for (size_t k = 0; k < NUMBER_OF_PARENTS; ++k) {
@@ -396,6 +383,7 @@ int main() {
                 cout << "NUMBER OF PARENTS" << k << endl;
                 //int index_to_swap = rand() % CITIES_IN_TOUR;
                 Tour first = fit_parent_population.at(k);
+                cout << fit_parent_population.at(k).get_fitness_rating() << endl;
                 //Tour second = fit_parent_population.at(k + 1);
 
 
