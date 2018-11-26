@@ -17,3 +17,10 @@ double City::getY() const {
 double City::getId() const {
     return id;
 }
+
+City& City::operator=(const City &c) {
+    this->x = c.x;
+    this->y = c.y;
+    this->id = c.id;
+    return *this;
+}

@@ -104,23 +104,25 @@ Tour get_fittest_parent(vector<Tour> parent_population) {
  * @param index
  * @return
  */
-void add_offspring_tour(Tour parent, Tour &child, vector<int> &used_place_id, size_t parent_number) {
-   //map<int, City> m;
+void add_offspring_tour(Tour parent, Tour &child, map<int, City> &used_place_id, int k) {
     auto parent_container = parent.getContainer();
+    //vector <City> list_of_city_choices;
+    //map<int, City> m_used_place;
+
+    //generate a random number
+
+    int rand_num_range = parent_container.size() - used_place_id.size();
+    cout << "rand_num_range: " << rand_num_range;
 
 
-//
-//    //put parent tour in a map of cities
-//    for(size_t i = 0; i < parent_container.size(); ++i) {
-//        m.insert(pair<int, City>(parent_container.at(i).getId(), parent_container.at(i)));
-//        cout << "parent tour ID in map " << parent_container.at(i).getId() << endl;
-//    }
-//
-//    //delete cities in map where id matches that of used_place_id
-//    for(size_t i = 0; i < used_place_id.size(); ++i) {
-//        m.erase(used_place_id.at(i));
-//        cout << "city Id erased from used_place_id " << used_place_id.at(i) << endl;
-//    }
+
+    size_t random_index = (rand() % rand_num_range) + 1;
+    cout << "random index " << random_index << endl;
+    cout << endl;
+
+    if (k == NUMBER_OF_PARENTS - 1) {
+        random_index = rand_num_range;
+    }
 
 //print out parent container id
     for(size_t i = 0; i < parent_container.size(); ++i) {
@@ -131,51 +133,75 @@ void add_offspring_tour(Tour parent, Tour &child, vector<int> &used_place_id, si
     }
 
 // print out values in used_place_id
-    for(size_t i = 0; i < used_place_id.size(); ++i) {
-        {
-            cout << "used_place_id[ " << i << "] " << used_place_id[i] << endl;
+//    for(size_t i = 0; i < used_place_id.size(); ++i) {
+//        {
+//            cout << "used_place_id[ " << i << "] " << used_place_id[i] << endl;
+//
+//        }
+//    }
 
+
+
+    cout << endl;
+    //swap cities in tour for up to the rand_num_range so that numbers up tp rand_num_range in parent_container are uniqu
+    for(size_t i = 0; i < random_index; ++i) {
+        int parent_id = parent_container[i].getId();
+        int current_dup_streak = 0;
+        City temp(0, 0, 0);
+
+        while (used_place_id.find(parent_id) != used_place_id.end()) {
+            City next_city = parent_container[i + current_dup_streak + 1];
+            City first_city = parent_container[i];
+            temp = first_city;
+            first_city = next_city;
+            next_city = temp;
+            parent_id = parent_container[i].getId();
+            current_dup_streak++;
         }
     }
-    //delete cities in tour where id matches that of used_place_id
-    for(size_t i = 0; i < parent_container.size(); ++i) {
-        for(size_t j = 0; j < used_place_id.size(); ++j) {
-            if(parent_container[i].getId() == used_place_id[j]) {
-                cout << "deleted parents with IDs ";
-                cout << parent_container[i].getId() << endl;
-                parent_container.erase(parent_container.begin() + i);
-            }
-        }
+
+    //copy map to child container up to a random index
+    for(size_t i = 0; i < random_index; ++i) {
+        City c = *next(parent_container.begin(), i);
+        //m.erase(used_place_id.at(i));
+        used_place_id.insert(pair<int, City> (c.getId(), c));
+        cout << "city Id added to used_place_id " << c.getId() << endl;
+        //adding to child tour container
+        child.getContainer().push_back(c);
     }
+
+//        for(size_t j = 0; j < used_place_id.size(); ++j) {
+//            if(parent_container[i].getId() != used_place_id[j]) {
+//                cout << "deleted parents with IDs ";
+//                cout << parent_container[i].getId() << endl;
+//                auto it = parent_container.begin() + i;
+//                list_of_city_choices.push_back(*it);
+//                //parent_container.erase(parent_container.begin() + i);
+//
+//            }
+//        }
+
 
     //check if the parent_container with that id is deleted from the parent container
-    for(size_t j = 0; j < parent_container.size(); ++j) {
-        cout << "parent container at index[" << j << "] " << parent_container.at(j).getId() << endl;
+    for(auto it = used_place_id.begin(); it != used_place_id.end(); ++it) {
+        cout << "list_of_choices" <<  it->first << endl;
     }
 
-    size_t size= parent_container.size();
-    cout << "parent container size: " << size;
 
     //find size of modified map
     //size_t size = m.size();
     //cout << "size of modified map " << size << endl;
-    size_t random_index = (rand() % size);
-    cout << "random index " << random_index << endl;
-    cout << endl;
+//    if (parent_container.size() == 0) {
+//        return;
+//    }
+
 
     //if its the last parent random_index will be the full size of parent
-    if (parent_number == NUMBER_OF_PARENTS - 1) {
-        random_index = parent_container.size();
-    }
+//    if (parent_number == NUMBER_OF_PARENTS - 1) {
+//        random_index = parent_container.size();
+//    }
 
-    //copy map to child container up to a random index
-    City c = *next(parent_container.begin(), random_index);
-    //m.erase(used_place_id.at(i));
-    used_place_id.push_back(c.getId());
-    cout << "city Id added to used_place_id " << c.getId() << endl;
-    child.getContainer().push_back(c);
 
-    cout << endl;
 
     //printing new child container for testing
     cout << "Printing the IDs in new child container" << endl;
@@ -188,7 +214,7 @@ void add_offspring_tour(Tour parent, Tour &child, vector<int> &used_place_id, si
 
 int main() {
     const int CITIES_IN_TOUR = 5; //orginally 32
-    const int POPULATION_SIZE = 5; //number or tours in  a population 32
+    const int POPULATION_SIZE = 10; //number or tours in  a population 32
     const int SHUFFLES = 5; //64
     const int ITERATIONS = 10; //1000
     const int MAP_BOUNDARY = 1000; //1000
@@ -304,8 +330,9 @@ int main() {
             cout << endl;
             cout << "5 random index choosen: " << endl;
             for (size_t i = 0; i < PARENT_POOL_SIZE; ++i) {
-                parents_random_indices.push_back(rand() % POPULATION_SIZE);
-                cout << "index " << i << rand() % POPULATION_SIZE << endl;
+                int random_number = rand() % POPULATION_SIZE;
+                parents_random_indices.push_back(random_number);
+                cout << "index " << i << " " << random_number << endl;
             }
             parent_population = select_parent(parents_random_indices, population);
 
@@ -324,13 +351,28 @@ int main() {
             //++population_index;
         }
 
+        for(size_t k = 0; k < NUMBER_OF_PARENTS; ++k) {
+            cout << endl;
+            cout << "number parent " << k << endl;
+            int index_to_swap = rand() % CITIES_IN_TOUR;
+            Tour first = fit_parent_population.at(k);
+            //Tour second = fit_parent_population.at(k + 1);
+
+            cout << first.get_fitness_rating() << endl;
+
+//            auto container = first.getContainer();
+//            for (size_t h = 0; h < container.size(); ++h) {
+//                cout << container.at(h).getId() << endl;
+//            }
+
+        }
         //crossing the parents
         Tour child_tour;
-        vector<int> used_place_id;
+        map<int, City> used_place_id;
         for(size_t k = 0; k < NUMBER_OF_PARENTS; ++k) {
             cout << endl;
             cout << "NUMBER OF PARENTS" << k << endl;
-            int index_to_swap = rand() % CITIES_IN_TOUR;
+            //int index_to_swap = rand() % CITIES_IN_TOUR;
             Tour first = fit_parent_population.at(k);
             //Tour second = fit_parent_population.at(k + 1);
 

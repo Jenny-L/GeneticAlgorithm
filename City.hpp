@@ -16,6 +16,7 @@ public:
     double getX() const;
     double getY() const;
     double getId() const;
+    City& operator=(const City &c);
 
 };
 
