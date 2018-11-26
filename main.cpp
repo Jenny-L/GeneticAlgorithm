@@ -29,6 +29,11 @@ double get_distance_between_cites(City a, City b) {
 
 }
 
+/**
+ * Determine fitness
+ * @param distance double
+ * @return double
+ */
 double determine_fitness(double distance) {
     double fitness = (1 / distance) * SCALAR;
     return fitness;
@@ -36,8 +41,8 @@ double determine_fitness(double distance) {
 
 /**
  * Calculate the distance between 2 adjacent cities for a tour
- * @param t
- * @return
+ * @param t as vector<City>
+ * @return total_distance as double
  */
 double get_tour_distance(vector<City> t, double &total_distance) {
     int i;
@@ -50,6 +55,9 @@ double get_tour_distance(vector<City> t, double &total_distance) {
 
 /**
  * Select the parent tours
+ * @param parents_random_indices as vector<int>
+ * @param population as vector<Tour>
+ * @return vector <Tour>
  */
 vector<Tour> select_parent(vector<int> parents_random_indices, vector<Tour> population) {
     vector<Tour> parents;
@@ -60,27 +68,12 @@ vector<Tour> select_parent(vector<int> parents_random_indices, vector<Tour> popu
     return parents;
 }
 
-/**
- * Creates a new tour from a given set of parent tours
- */
-void crossover() {
-
-}
 
 /**
- * May mutate a tour
+ * Finds the fittest parent within a population
+ * @param parent_population vector<Tour>
+ * @return Tour
  */
-void mutate() {
-
-}
-
-///**
-// * Check if a tour contains a city
-// */
-//bool contains_city() {
-//
-//}
-
 Tour get_fittest_parent(vector<Tour> parent_population) {
     double highest_fitness = 0;
     Tour fittest_parent;
@@ -96,10 +89,12 @@ Tour get_fittest_parent(vector<Tour> parent_population) {
 }
 
 /**
- *
- * @param parent
- * @param index
- * @return
+ * Add offspring to tour
+ * @param parent Tour
+ * @param child Tour
+ * @param used_place_id as map<int, City>
+ * @param k as int
+ * @return void
  */
 void add_offspring_tour(Tour parent, Tour &child, map<int, City> &used_place_id, int k) {
     auto parent_container = parent.getContainer();
@@ -231,7 +226,10 @@ void add_offspring_tour(Tour parent, Tour &child, map<int, City> &used_place_id,
 //void swap_neighbouring_cities(&Tour t, int index) {
 //
 //}
-
+/**
+ * Point of entry
+ * @return int
+ */
 int main() {
     const int CITIES_IN_TOUR = 32; //orginally 32
     const int POPULATION_SIZE = 32; //number or tours in  a population 32
