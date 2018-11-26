@@ -114,6 +114,9 @@ void add_offspring_tour(Tour parent, Tour &child, map<int, City> &used_place_id,
     int rand_num_range = parent_container.size() - used_place_id.size();
     cout << "rand_num_range: " << rand_num_range;
 
+    if(rand_num_range == 0) {
+        return;
+    }
 
 
     size_t random_index = (rand() % rand_num_range) + 1;
@@ -141,20 +144,29 @@ void add_offspring_tour(Tour parent, Tour &child, map<int, City> &used_place_id,
 //    }
 
 
-
-    cout << endl;
+//    City c{0,0, 2};
+//    City c1{0, 0, 3};
+//    City c2{0, 0, 1};
+//    City c3{0, 0, 4};
+//    City c4{0, 0, 0};
+//    vector<City> PC = {c, c1, c2, c3, c4};
+//
+//    map<int, City> newMap;
+//    newMap.insert(pair<int,City>(1,c2));
+//    newMap.insert(pair<int,City>(3,c1));
+//    newMap.insert(pair<int,City>(2,c));
+//    cout << endl;
     //swap cities in tour for up to the rand_num_range so that numbers up tp rand_num_range in parent_container are uniqu
+    int current_dup_streak;
     for(size_t i = 0; i < random_index; ++i) {
         int parent_id = parent_container[i].getId();
-        int current_dup_streak = 0;
+        current_dup_streak = 0;
         City temp(0, 0, 0);
 
         while (used_place_id.find(parent_id) != used_place_id.end()) {
-            City next_city = parent_container[i + current_dup_streak + 1];
-            City first_city = parent_container[i];
-            temp = first_city;
-            first_city = next_city;
-            next_city = temp;
+            temp = parent_container[i];
+            parent_container[i] = parent_container[i + current_dup_streak + 1];
+            parent_container[i + current_dup_streak + 1] = temp;
             parent_id = parent_container[i].getId();
             current_dup_streak++;
         }
