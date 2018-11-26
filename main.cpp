@@ -325,9 +325,11 @@ int main() {
 
     //while (best_fitness / base_fitness > improvement_factor) {
     size_t population_index = 0;
+    vector<Tour> child_population;
+    vector<Tour> new_population;
 
     //CROSSOVER: swapping every other tour with a parent
-    for(auto it = population.begin(); it != population.end(); ++it) {
+    for(size_t i = 0; i < POPULATION_SIZE / 2; i++) {
 
         Tour fittest_parent;
         vector<Tour> fit_parent_population;
@@ -392,14 +394,13 @@ int main() {
             add_offspring_tour(first, child_tour, used_place_id, k);
 
         }
+        child_population.push_back(child_tour);
+        cout << "MADE A CHILD FROM 3 PARENTS" << endl;
 
-        cout << "THERE SHOULD ONLY BE ONE CHILD" << endl;
-        if (it != population.end() - 1) {
-            ++it;
-        }
+
     }
 
-    for (auto it = population.begin(); it != population.end(); ++it) {
+    for (auto it = child_population.begin(); it != child_population.end(); ++it) {
         cout << "fitness2: " << it->get_fitness_rating() << endl;
     }
 
