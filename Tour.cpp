@@ -1,6 +1,9 @@
-//
-// Created by Jenny Ly on 2018-11-19.
-//
+/**
+ * Tour.cpp
+ *
+ * @author Jenny Ly
+ * @version 1.0
+ */
 
 #include "Tour.hpp"
 #include <vector>

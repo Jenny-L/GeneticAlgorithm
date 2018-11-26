@@ -6,17 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/jennyly/Term3/cppassignment2/City.cpp
-City.hpp
 /Users/jennyly/Term3/cppassignment2/City.hpp
-
-/Users/jennyly/Term3/cppassignment2/City.hpp
-
-/Users/jennyly/Term3/cppassignment2/Tour.cpp
-Tour.hpp
-/Users/jennyly/Term3/cppassignment2/Tour.hpp
-vector
--
 
 /Users/jennyly/Term3/cppassignment2/Tour.hpp
 City.hpp

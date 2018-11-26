@@ -1,6 +1,9 @@
-//
-// Created by Jenny Ly on 2018-11-19.
-//
+/**
+ * City.hpp
+ *
+ * @author Jenny Ly
+ * @version 1.0
+ */
 
 #ifndef CPPASSIGNMENT2_CITY_HPP
 #define CPPASSIGNMENT2_CITY_HPP

@@ -1,3 +1,11 @@
+/**
+ * Figure out the travelling sales man problem by using a genetic algorythm.
+ * Tries to find the shortest distance between a series of cities
+ *
+ * @author Jenny Ly
+ * @version 1.0
+ */
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -20,11 +28,8 @@ const int NUMBER_OF_PARENTS = 3;
  */
 double get_distance_between_cites(City a, City b) {
     double changeX = abs(a.getX() - b.getX());
-    cout << "changex: " << changeX << endl;
     double changeY = abs(a.getY() - b.getY());
-    cout << "changey: " << changeY << endl;
     double distance =  sqrt(pow(changeX, 2) + pow(changeY, 2));
-    cout << "distance" << distance << endl;
     return distance;
 
 }
@@ -46,9 +51,10 @@ double determine_fitness(double distance) {
  */
 double get_tour_distance(vector<City> t, double &total_distance) {
     int i;
-    for(i = 0; i < t.size(); ++i) {
+    for(i = 0; i < t.size() - 1; ++i) {
         total_distance = total_distance + get_distance_between_cites(t[i], t[i+1]);
     }
+    ++i;
     total_distance += get_distance_between_cites(t[i], t[0]);
     return total_distance;
 }
@@ -83,8 +89,6 @@ Tour get_fittest_parent(vector<Tour> parent_population) {
             highest_fitness = parent_population[i].get_fitness_rating();
         }
     }
-    cout << "get_fittest_partent " << highest_fitness << endl;
-    //sort(parent_population.begin(), parent_population.end());
     return fittest_parent;
 }
 

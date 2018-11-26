@@ -1,6 +1,9 @@
-//
-// Created by Jenny Ly on 2018-11-19.
-//
+/**
+ * Tour.hpp
+ *
+ * @version 1.0
+ * @author Jenny Ly
+ */
 
 #ifndef CPPASSIGNMENT2_TOUR_HPP
 #define CPPASSIGNMENT2_TOUR_HPP

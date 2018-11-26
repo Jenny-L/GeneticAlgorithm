@@ -1,7 +1,8 @@
-//
-// Created by Jenny Ly on 2018-11-19.
-//
-
+/**
+ * City.cpp
+ * @author Jenny Ly
+ * @version 1.0
+ */
 #include "City.hpp"
 
 /**
